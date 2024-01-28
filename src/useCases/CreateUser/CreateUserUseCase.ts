@@ -24,7 +24,7 @@ export class CreateUSerUseCase {
             to: {
                 name: data.name,
                 email: data.email,
-            };
+            },
             from: {
                 name: 'Empresa Fanstasia',
                 email: 'equipe.suporte@empresa.com'
