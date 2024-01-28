@@ -5,7 +5,7 @@ import nodemailer from 'nodemailer';
 export class MailTrapMailProvider implements IMailProvider{
     private transporter: Mail;
 
-    constructor(
+    constructor(){
         this.transporter = nodemailer.createTransport({
             host: 'smtp.mailtrap.io',
             port: 2525,
@@ -14,7 +14,8 @@ export class MailTrapMailProvider implements IMailProvider{
                 pass: "84b46267394ac9"
             }
         })
-    ){}
+    }
+    
     async sendMail(message: IMessage): Promise<void> {
         await this.transporter.sendMail({
             to: {
